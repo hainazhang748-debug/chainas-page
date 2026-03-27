@@ -1,11 +1,74 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>mypage</title>
+    <title>HAINA</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial;
+            text-align: center;
+            padding: 50px;
+        }
+        h1 {
+            font-size: 80px;
+        }
+        .projects {
+            display: flex;
+            gap: 40px;
+            justify-content: center;
+            margin-top: 80px;
+        }
+        .card {
+            width: 250px;
+            text-align: center;
+        }
+        .square {
+            width: 250px;
+            height: 250px;
+        }
+    
+        #square1 {
+            background-color: #8B5A2B;
+        }
+        #square2 {
+            background-color: #4A6FA5;
+        }
+        #square3 {
+            background-color: #6B8E6B;
+        }
+        .card p {
+            margin-top: 15px;
+            font-size: 20px;
+        }
+        a {
+            color: white;
+            text-decoration: none;
+        }
+    </style>
 </head>
 <body>
-    <p> my first paragraph </p>
+    <h1>HAINA</h1>
+    <div class="projects">
+        <a href="uni.html">
+            <div class="card">
+                <div class="square" id="square1"></div>
+                <p>25/26 Uni</p>
+            </div>
+        </a>
+        <a href="china.html">
+            <div class="card">
+                <div class="square" id="square2"></div>
+                <p>26 China</p>
+            </div>
+        </a>
+        <a href="block.html">
+            <div class="card">
+                <div class="square" id="square3"></div>
+                <p>Blockkurs 1</p>
+            </div>
+        </a>
+    </div>
 </body>
 </html>

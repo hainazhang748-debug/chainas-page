@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Blockkurs 1</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial;
+            text-align: center;
+            padding: 50px;
+        }
+        h1 {
+            font-size: 50px;
+        }
+        .animation-area {
+            max-width: 600px;
+            margin: 40px auto;
+        }
+        .animation-area img {
+            width: 100%;
+            cursor: pointer;
+        }
+        .hint {
+            margin-top: 20px;
+            color: #888;
+        }
+        .back {
+            display: inline-block;
+            margin-top: 40px;
+            color: white;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Blockkurs 1</h1>
+    <div class="animation-area" id="animationArea">
+        <img id="animImg" src="">
+        <div class="hint">ANIMATION</div>
+    </div>
+    <br>
+    <a href="index.html" class="back">Zurüüück</a>
+
+    <script>
+        let images = [
+            'images/b1.png',
+            'images/b2.png',
+            'images/b3.png',
+            'images/b4.png'
+        ];
+
+        let currentIndex = 0;
+        let animImg = document.getElementById('animImg');
+        let animArea = document.getElementById('animationArea');
+        
+        animImg.src = images[0];
+        
+        animImg.onclick = function() {
+            window.open(images[currentIndex]);
+        };
+        
+        animArea.onmousemove = function(e) {
+            let rect = animArea.getBoundingClientRect();
+            let x = e.clientX - rect.left;
+            let width = rect.width;
+            let index = Math.floor((x / width) * images.length);
+            if (index < 0) index = 0;
+            if (index >= images.length) index = images.length - 1;
+            
+            currentIndex = index;
+            animImg.src = images[currentIndex];
+            animImg.onclick = function() {
+                window.open(images[currentIndex]);
+            };
+        };
+        
+        animArea.onmouseleave = function() {
+            currentIndex = 0;
+            animImg.src = images[0];
+            animImg.onclick = function() {
+                window.open(images[0]);
+            };
+        };
+    </script>
+</body>
+</html>

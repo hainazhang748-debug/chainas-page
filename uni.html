@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>25/26 Uni</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial;
+            text-align: center;
+            padding: 50px;
+        }
+        h1 {
+            font-size: 50px;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin: 40px 0;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .gallery img {
+            width: 200px;
+            height: 150px;
+            cursor: pointer;
+        }
+        .back {
+            display: inline-block;
+            margin-top: 40px;
+            color: white;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <h1>25/26 Uni</h1>
+    <div class="gallery" id="gallery"></div>
+    <br>
+    <a href="index.html" class="back">ZURüüüCK</a>
+
+    <script>
+        // 8张照片的路径（后期改成你的）
+        let photos = [
+            'images/u1.png',
+            'images/u2.png',
+            'images/u3.png'
+        ];
+
+        let gallery = document.getElementById('gallery');
+        for (let i = 0; i < photos.length; i++) {
+            let img = document.createElement('img');
+            img.src = photos[i];
+            img.onclick = function() {
+                window.open(photos[i]);
+            };
+            gallery.appendChild(img);
+        }
+    </script>
+</body>
+</html>
